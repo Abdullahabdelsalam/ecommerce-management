@@ -11,14 +11,15 @@ public class Product {
 //        System.out.println("Product Bean Created Successfully");
 //    }
 
-    @Autowired
-    private ProductService productService;
+
+    private final  ProductService productService;
 
     // Constructor Injection
 //    @Autowired
-//    public Product(ProductService productService) {
-//        this.productService = productService;
-//    }
+    public Product(ProductService productService) {
+        this.productService = productService;
+        System.out.println("Product Constructor Called");
+    }
 
     public void displayProduct() {
         productService.serveProduct();

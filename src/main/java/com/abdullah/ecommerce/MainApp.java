@@ -45,6 +45,5 @@ public class MainApp {
 
         product.displayProduct();
 
-
     }
 }
