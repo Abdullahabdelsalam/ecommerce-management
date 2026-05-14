@@ -40,10 +40,16 @@ public class MainApp {
         ApplicationContext context =
                 new AnnotationConfigApplicationContext(AppConfig.class);
 
-        Product product =
-                context.getBean(Product.class);
+//        Product product =
+//                context.getBean(Product.class);
+//
+//        product.displayProduct();
 
-        product.displayProduct();
+        Product p1 = context.getBean(Product.class);
+        Product p2 = context.getBean(Product.class);
+
+        p1.displayProductScop();
+        p2.displayProductScop();
 
     }
 }
