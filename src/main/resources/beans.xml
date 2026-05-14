@@ -6,7 +6,16 @@
        http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="productBean"
-          class="com.abdullah.ecommerce.model.Product" />
+<!--    <bean id="productBean"-->
+<!--          class="com.abdullah.ecommerce.model.Product" />-->
 
+    <bean id="productService"
+          class="com.abdullah.ecommerce.service.ProductService"/>
+
+    <bean id="productBean"
+          class="com.abdullah.ecommerce.model.Product">
+
+        <constructor-arg ref="productService"/>
+
+    </bean>
 </beans>

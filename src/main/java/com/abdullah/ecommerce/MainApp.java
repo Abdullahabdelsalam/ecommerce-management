@@ -14,17 +14,26 @@ public class MainApp {
 //        Product product = new Product();
 //        product.displayProduct();
 
-        // used BeanFactory
+//         used BeanFactory
 //        BeanFactory factory =
 //                new XmlBeanFactory(new ClassPathResource("beans.xml"));
-        
+
         // used ApplicationContext
+//        ApplicationContext context =
+//                new ClassPathXmlApplicationContext("beans.xml");
+//        Product product =
+//                (Product) context.getBean("productBean");
+//
+//        product.displayProduct();
+
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("beans.xml");
+
         Product product =
                 (Product) context.getBean("productBean");
 
         product.displayProduct();
+
 
     }
 }
