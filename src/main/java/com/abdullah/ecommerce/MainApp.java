@@ -1,8 +1,10 @@
 package com.abdullah.ecommerce;
 
+import com.abdullah.ecommerce.config.AppConfig;
 import com.abdullah.ecommerce.model.Product;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 
@@ -26,11 +28,20 @@ public class MainApp {
 //
 //        product.displayProduct();
 
+//        ApplicationContext context =
+//                new ClassPathXmlApplicationContext("beans.xml");
+//
+//        Product product =
+//                (Product) context.getBean("productBean");
+//
+//        product.displayProduct();
+
+        // used Annotation Config ApplicationContext
         ApplicationContext context =
-                new ClassPathXmlApplicationContext("beans.xml");
+                new AnnotationConfigApplicationContext(AppConfig.class);
 
         Product product =
-                (Product) context.getBean("productBean");
+                context.getBean(Product.class);
 
         product.displayProduct();
 
